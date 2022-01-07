@@ -1,12 +1,20 @@
 <template>
-  <div id="app">
-    <router-view name="header" />
-    <div class="wrapper">
-      <router-view />
-    </div>
-    <router-view name="footer" />
-  </div>
+  <v-app>
+    <router-view name="header"></router-view>
+    <v-main>
+      <router-view/>
+    </v-main>
+    <router-view name="footer"></router-view>
+  </v-app>
 </template>
+
 <script>
-export default {};
+
+export default {
+  name: 'App',
+
+  components: {},
+
+  data: () => ({}),
+};
 </script>
