@@ -23,7 +23,6 @@ const routes = [
 ];
 
 const router = new Router({
-  mode: "history",
   linkExactActiveClass: "active",
   routes,
   scrollBehavior: to => {
