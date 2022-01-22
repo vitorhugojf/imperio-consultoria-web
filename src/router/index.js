@@ -12,7 +12,25 @@ const routes = [
     name: "helloWorld",
     components: {
       header: AppHeader,
-      default: () => import(/* webpackChunkName: "home" */ "../views/HelloWorld.vue"),
+      default: () => import(/* webpackChunkName: "inicio" */ "../views/HelloWorld.vue"),
+      footer: AppFooter
+    }
+  },
+  {
+    path: "/fim",
+    name: "byeWorld",
+    components: {
+      header: AppHeader,
+      default: () => import(/* webpackChunkName: "fim" */ "../views/ByeWorld.vue"),
+      footer: AppFooter
+    }
+  },
+  {
+    path: "/sobre",
+    name: "about",
+    components: {
+      header: AppHeader,
+      default: () => import(/* webpackChunkName: "sobre" */ "../views/About.vue"),
       footer: AppFooter
     }
   },
