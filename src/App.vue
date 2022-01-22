@@ -3,7 +3,7 @@
     <router-view name="header"></router-view>
     <v-main>
       <fade-transition origin="center" mode="out-in" :duration="250">
-        <router-view/>
+        <router-view />
       </fade-transition>
     </v-main>
     <router-view name="footer"></router-view>
@@ -14,10 +14,10 @@
 import { FadeTransition } from "vue2-transitions";
 
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
-    FadeTransition
+    FadeTransition,
   },
 
   data: () => ({}),

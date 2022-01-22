@@ -1,7 +1,5 @@
 <template>
-  <v-container>
-    sobre
-  </v-container>
+  <v-container> sobre </v-container>
 </template>
 
 <script>
