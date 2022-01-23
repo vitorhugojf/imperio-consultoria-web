@@ -14,7 +14,11 @@ jobs:
       - uses: actions/checkout@v2
       - name: Set-up Node
       - uses: actions/setup-node@v1
+      - with:
+        node-version: "10.x"
       - name: Running install, prettier and deploy
       - run: npm install
+      - name: Running prettier
       - run: npm run prettier
+      - name: Running deploy
       - run: npm run deploy
