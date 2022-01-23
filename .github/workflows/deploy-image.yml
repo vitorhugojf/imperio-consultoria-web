@@ -32,5 +32,5 @@ jobs:
         git config --global user.email 'vitorhugojf9@gmail.com'
         git add -A
         git commit -m "New Deployment"
-        git push -f
+        git push -f master:gh-pages
         
