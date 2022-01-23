@@ -3,21 +3,22 @@ name: Create and publish a Docker image
 
 on:
   push:
-    branches: ['main']
+    branches: 
+      - main
 
 jobs:
-  run-npm-build:
+  run-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Running install, prettier and deploy
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-        run: |
-          npm install
-          npm run prettier
-          npm run deploy
+      - name: Checkout
+      - uses: actions/checkout@v2
+      - name: Set-up Node
+      - uses: actions/setup-node@v1
+      - with:
+        node-version: "10.x"
+      - name: Running install, prettier and deploy
+      - run: npm install
+      - run: npm run prettier
+      - run: npm run deploy
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - uses: actions/upload-artifact@main
-        with:
-          name: webpack artifacts
-          path: public/
