@@ -26,6 +26,7 @@ jobs:
     - run: yarn run build
     - name: Deploy app
       run: |
+        git fetch
         git checkout gh-pages
         git config --global user.name 'Vitor Hugo'
         git config --global user.email 'vitorhugojf9@gmail.com'
