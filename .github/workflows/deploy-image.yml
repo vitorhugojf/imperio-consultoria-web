@@ -20,4 +20,5 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: rm -rf node_modules package-lock.json && npm install
     - run: npm run deploy
