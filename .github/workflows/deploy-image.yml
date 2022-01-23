@@ -22,9 +22,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm logout
-    - run: vsts-npm-auth -config .npmrc
-    - run: npm install
+    - run: rm -rf node_modules package-lock.json && npm install
     - run: yarn run build
     - name: Deploy app
       run: |
