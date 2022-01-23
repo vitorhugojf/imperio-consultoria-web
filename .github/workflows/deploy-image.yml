@@ -1,24 +1,25 @@
-
-name: Create and publish a Docker image
+name: Node.js CI
 
 on:
   push:
-    branches: 
-      - main
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
 
 jobs:
-  run-deploy:
+  build:
+
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x, 15.x]
     steps:
-      - name: Checkout
-      - uses: actions/checkout@v2
-      - name: Set-up Node
-      - uses: actions/setup-node@v1
-      - with:
-        node-version: "10.x"
-      - name: Running install, prettier and deploy
-      - run: npm install
-      - name: Running prettier
-      - run: npm run prettier
-      - name: Running deploy
-      - run: npm run deploy
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm i
+    - run: npm run prettier
+    - run: npm run deploy
