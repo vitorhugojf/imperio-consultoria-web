@@ -10,15 +10,11 @@ jobs:
   run-deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - name: Checkout
       - uses: actions/checkout@v2
       - name: Set-up Node
       - uses: actions/setup-node@v1
-      - with:
-        node-version: "10.x"
       - name: Running install, prettier and deploy
       - run: npm install
       - run: npm run prettier
       - run: npm run deploy
-      - run: echo "🍏 This job's status is ${{ job.status }}."
