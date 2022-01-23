@@ -22,7 +22,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: rm -rf node_modules package-lock.json && npm install
+    - run: npm install
     - run: yarn run build
     - name: Deploy app
       run: |
@@ -31,6 +31,6 @@ jobs:
         git config --global user.name 'Vitor Hugo'
         git config --global user.email 'vitorhugojf9@gmail.com'
         git add -A
-        git commit -m "New Deployment"
+        git commit -m "New Deploy"
         git push -f master:gh-pages
         
