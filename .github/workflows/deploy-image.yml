@@ -26,9 +26,10 @@ jobs:
     - run: yarn run build
     - name: Deploy app
       run: |
+        git checkout gh-pages
         git config --global user.name 'Vitor Hugo'
         git config --global user.email 'vitorhugojf9@gmail.com'
         git add -A
         git commit -m "New Deployment"
-        git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/vitorhugojf/imperio-consultoria-web.git origin gh-pages
+        git push
         
