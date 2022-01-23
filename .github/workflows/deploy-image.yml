@@ -22,7 +22,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: rm -rf node_modules && npm install
+    - run: npm install --registry https://registry.npmjs.org
     - run: yarn run build
     - name: Deploy app
       run: |
